@@ -12,7 +12,7 @@ package agileassignmenty2s2;
 public class DeliveryMan {
 	private String name;
 	private String status;
-	private String age;
+	private int age;
 	private int numberOfDelivery;
 	private double salary;
 
@@ -32,11 +32,11 @@ public class DeliveryMan {
 		this.status = status;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -54,5 +54,13 @@ public class DeliveryMan {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
+	}
+	
+	public String toString() {
+		return "Name : " + name + "\n" 
+				+ "Status : " + status + "\n" 
+				+ "Age : " + age + "\n" 
+				+ "Delivery Number : " + numberOfDelivery + "\n" 
+				+ "Salary : " + salary + "\n";
 	}
 }

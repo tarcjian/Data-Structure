@@ -5,6 +5,8 @@
  */
 package agileassignmenty2s2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Lenovo
@@ -16,6 +18,22 @@ public class AgileAssignmentY2S2 {
 	 */
 	public static void main(String[] args) {
 		// TODO code application logic here
+		Scanner scanner = new Scanner(System.in);
+		DeliveryMan deliveryMan = new DeliveryMan();
+		
+		System.out.print("Enter name               : ");
+		deliveryMan.setName(scanner.nextLine());
+		System.out.print("Enter status             : ");
+		deliveryMan.setStatus(scanner.nextLine());
+		System.out.print("Enter age                : ");
+		deliveryMan.setAge(scanner.nextInt());
+		System.out.print("Enter number of delivery : ");
+		deliveryMan.setNumberOfDelivery(scanner.nextInt());
+		System.out.print("Enter salary             : ");
+		deliveryMan.setSalary(scanner.nextDouble());
+		
+		System.out.println(deliveryMan.toString());
+		
 	}
 	
 }
