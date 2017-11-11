@@ -19,4 +19,14 @@ public class HrManager {
 	public void add(DeliveryMan deliveryMan) {
 		list.add(deliveryMan);
 	}
+	
+	public String toString() {
+		String deliveryList = "";
+		for(int i = 0; i < list.size(); i++) {
+			
+			deliveryList += list.get(i).toString();
+			deliveryList += "  \n";
+		}
+		return deliveryList;
+	}
 }
