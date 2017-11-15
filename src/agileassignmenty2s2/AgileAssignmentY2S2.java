@@ -21,7 +21,15 @@ public class AgileAssignmentY2S2 {
 		DeliveryMan deliveryMan;
 		HrManager hr = new HrManager();
 		boolean spacing = false;
-
+                    int answer;
+                
+                do {
+                    System.out.println("1. Add Delivery Man");
+                System.out.println("2. View Delivery Man Detailed");
+                System.out.println("3. End");
+                 answer = Integer.parseInt(scanner.nextLine());
+                
+                if (answer == 1) {
 		do {
 			if (spacing) {
 				System.out.println("\n\n\n\n");
@@ -46,10 +54,17 @@ public class AgileAssignmentY2S2 {
 			spacing = true;
 
 		} while (scanner.nextLine().equals("Y") || scanner.nextLine().equals("y"));
-
-		System.out.println("\n\n\n\n");
+                }
+                else if (answer == 2) {
+                    System.out.println("\n\n\n\n");
 		System.out.println("Delivery Man List: ");
 		System.out.println(hr.toString());
+                }
+                } while (answer != 3); 
+                
+                
+		
 	}
+                
 
 }
