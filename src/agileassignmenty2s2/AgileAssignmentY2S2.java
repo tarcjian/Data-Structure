@@ -20,11 +20,13 @@ public class AgileAssignmentY2S2 {
 		HrManager hr = new HrManager();
 		boolean spacing = false;
 		int answer;
+		String moreStaff;
 
 		do {
 			System.out.println("1. Add Delivery Man");
 			System.out.println("2. View Delivery Man Detailed");
 			System.out.println("3. End");
+			System.out.print("Enter you choice : ");
 			answer = Integer.parseInt(scanner.nextLine());
 
 			if (answer == 1) {
@@ -44,6 +46,7 @@ public class AgileAssignmentY2S2 {
 					deliveryMan.setNumberOfDelivery(0);
 					System.out.print("Enter salary             : ");
 					deliveryMan.setSalary(scanner.nextDouble());
+					scanner.nextLine();
 					System.out.print("Enter address            : ");
 					deliveryMan.setAddress(scanner.nextLine());
 					System.out.print("Enter phone number       : ");
@@ -52,12 +55,13 @@ public class AgileAssignmentY2S2 {
 					hr.add(deliveryMan);
 
 					System.out.print("Do you wish to continue to add staff member? (Y/N)");
+					moreStaff = scanner.nextLine();
 					spacing = true;
 
-				} while (scanner.nextLine().equals("Y") || scanner.nextLine().equals("y"));
-				
+				} while (moreStaff.equals("Y") || moreStaff.equals("y"));
+
 			} else if (answer == 2) {
-				
+
 				System.out.println("\n\n\n\n");
 				System.out.println("Delivery Man List: ");
 				System.out.println(hr.toString());
