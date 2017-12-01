@@ -105,33 +105,33 @@ public class AgileAssignmentY2S2 {
 							deliveryMan.setName(scanner.nextLine());
 							break;
 						case 2:
-							System.out.println("Current Status is ");
-							System.out.println("New update status is ");
+							System.out.println("Current Status is " + deliveryMan.getStatus());
+							System.out.print("New update status is ");
 							deliveryMan.setStatus(scanner.nextLine());
 							break;
 						case 3:
-							System.out.println("Current age is ");
-							System.out.println("New update age is ");
+							System.out.println("Current age is "  + deliveryMan.getAge());
+							System.out.print("New update age is ");
 							deliveryMan.setAge(Integer.parseInt(scanner.nextLine()));
 							break;
 						case 4:
-							System.out.println("Current number of delivery is ");
-							System.out.println("New update number of delivery is ");
+							System.out.println("Current number of delivery is " + deliveryMan.getNumberOfDelivery());
+							System.out.print("New update number of delivery is ");
 							deliveryMan.setNumberOfDelivery(Integer.parseInt(scanner.nextLine()));
 							break;
 						case 5:
-							System.out.println("Current salary is ");
-							System.out.println("New update salary is ");
+							System.out.println("Current salary is " + deliveryMan.getSalary());
+							System.out.print("New update salary is ");
 							deliveryMan.setSalary(Double.parseDouble(scanner.nextLine()));
 							break;
 						case 6:
-							System.out.println("Current address is ");
-							System.out.println("New update address is ");
+							System.out.println("Current address is " + deliveryMan.getAddress());
+							System.out.print("New update address is ");
 							deliveryMan.setAddress(scanner.nextLine());
 							break;
 						case 7:
-							System.out.println("Current phone number is ");
-							System.out.println("New update phone number is ");
+							System.out.println("Current phone number is " + deliveryMan.getPhoneNumber());
+							System.out.print("New update phone number is ");
 							deliveryMan.setPhoneNumber(scanner.nextLine());
 							break;
 					}
