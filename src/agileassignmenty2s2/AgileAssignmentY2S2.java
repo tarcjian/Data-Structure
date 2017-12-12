@@ -57,7 +57,8 @@ public class AgileAssignmentY2S2 {
 					deliveryMan.setAddress(scanner.nextLine());
 					System.out.print("Enter phone number       : ");
 					deliveryMan.setPhoneNumber(scanner.nextLine());
-					deliveryMan.setNumberOfDelivery(0);
+					System.out.print("Enter delivery Number    : ");
+					deliveryMan.setNumberOfDelivery(Integer.parseInt(scanner.nextLine()));
 					list.add(deliveryMan);
 
 					System.out.print("Do you wish to continue to add staff member? (Y/N)");
@@ -143,11 +144,14 @@ public class AgileAssignmentY2S2 {
 			} else if (answer == 4) {
 				spacing();
 				System.out.println("Delivery Man Report");
+				double averageDelivery = 0;
 				for (int i = 0; i < list.size(); i++) {
 					System.out.println(i + 1 + ". " + list.get(i).getName());
+					averageDelivery += list.get(i).getNumberOfDelivery();
 				}
 				System.out.print("Select Delivery Man Report: ");
 				System.out.println("Number of delivery made: " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
+				System.out.println("Average Delivery Made: " + averageDelivery/list.size());
 			}
 			spacing();
 		} while (answer != 0);
