@@ -157,11 +157,14 @@ public class AgileAssignmentY2S2 {
                                             highDelivery = list.get(i).getNumberOfDelivery();
                                         }
 				}
-				System.out.print("Select Delivery Man Report: ");
-				System.out.println("Number of delivery made : " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
+                                System.out.println("Daily Number of Delivery Report");
                                 System.out.println("Average Delivery Made   : " + averageDelivery/list.size());
                                 System.out.println("Highest Delivery Made   : " + highDelivery);
                                 System.out.println("Lowest Delivery Made    : " + lowDelivery);
+                                System.out.println("\n\n\n");
+				System.out.print("Select Delivery Man Report: ");
+				System.out.println("Number of delivery made : " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
+                                
 			}
 			spacing();
 		} while (answer != 0);
