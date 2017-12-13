@@ -145,13 +145,23 @@ public class AgileAssignmentY2S2 {
 				spacing();
 				System.out.println("Delivery Man Report");
 				double averageDelivery = 0;
+                                int highDelivery = list.get(0).getNumberOfDelivery();
+                                int lowDelivery = list.get(0).getNumberOfDelivery();
 				for (int i = 0; i < list.size(); i++) {
 					System.out.println(i + 1 + ". " + list.get(i).getName());
 					averageDelivery += list.get(i).getNumberOfDelivery();
+                                        if (lowDelivery > list.get(i).getNumberOfDelivery()) {
+                                            lowDelivery = list.get(i).getNumberOfDelivery();
+                                        }
+                                        if (highDelivery < list.get(i).getNumberOfDelivery()) {
+                                            highDelivery = list.get(i).getNumberOfDelivery();
+                                        }
 				}
 				System.out.print("Select Delivery Man Report: ");
-				System.out.println("Number of delivery made: " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
-				System.out.println("Average Delivery Made: " + averageDelivery/list.size());
+				System.out.println("Number of delivery made : " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
+                                System.out.println("Average Delivery Made   : " + averageDelivery/list.size());
+                                System.out.println("Highest Delivery Made   : " + highDelivery);
+                                System.out.println("Lowest Delivery Made    : " + lowDelivery);
 			}
 			spacing();
 		} while (answer != 0);
