@@ -32,14 +32,13 @@ public class AgileAssignmentY2S2 {
 			System.out.println("2. View Delivery Man Detail");
 			System.out.println("3. Update Delivery Man Detail");
 			System.out.println("4. View Delivery Man Report");
-			
+
 			System.out.print("Enter you choice : ");
 			answer = Integer.parseInt(scanner.nextLine());
 
 			if (answer == 1) {
 				do {
 					spacing();
-					
 
 					deliveryMan = new DeliveryMan();
 
@@ -63,7 +62,6 @@ public class AgileAssignmentY2S2 {
 
 					System.out.print("Do you wish to continue to add staff member? (Y/N)");
 					moreStaff = scanner.nextLine();
-					
 
 				} while (moreStaff.equals("Y") || moreStaff.equals("y"));
 
@@ -82,9 +80,9 @@ public class AgileAssignmentY2S2 {
 					System.out.println((i + 1) + ". " + list.get(i).getName());
 				}
 				System.out.print("Please select the delivery man you wish to update: ");
-				
+
 				deliveryManUpdateNumber = Integer.parseInt(scanner.nextLine()) - 1;
-				
+
 				deliveryMan = new DeliveryMan();
 				deliveryMan = list.get(deliveryManUpdateNumber);
 				do {
@@ -112,7 +110,7 @@ public class AgileAssignmentY2S2 {
 							deliveryMan.setStatus(scanner.nextLine());
 							break;
 						case 3:
-							System.out.println("Current age is "  + deliveryMan.getAge());
+							System.out.println("Current age is " + deliveryMan.getAge());
 							System.out.print("New update age is ");
 							deliveryMan.setAge(Integer.parseInt(scanner.nextLine()));
 							break;
@@ -138,33 +136,32 @@ public class AgileAssignmentY2S2 {
 							break;
 					}
 				} while (moreUpdate != 0);
-				
+
 				list.set(deliveryManUpdateNumber, deliveryMan);
-			
+
 			} else if (answer == 4) {
 				spacing();
 				System.out.println("Delivery Man Report");
 				double averageDelivery = 0;
-                                int highDelivery = list.get(0).getNumberOfDelivery();
-                                int lowDelivery = list.get(0).getNumberOfDelivery();
+				int highDelivery = list.get(0).getNumberOfDelivery();
+				int lowDelivery = list.get(0).getNumberOfDelivery();
 				for (int i = 0; i < list.size(); i++) {
 					System.out.println(i + 1 + ". " + list.get(i).getName());
 					averageDelivery += list.get(i).getNumberOfDelivery();
-                                        if (lowDelivery > list.get(i).getNumberOfDelivery()) {
-                                            lowDelivery = list.get(i).getNumberOfDelivery();
-                                        }
-                                        if (highDelivery < list.get(i).getNumberOfDelivery()) {
-                                            highDelivery = list.get(i).getNumberOfDelivery();
-                                        }
+					if (lowDelivery > list.get(i).getNumberOfDelivery()) {
+						lowDelivery = list.get(i).getNumberOfDelivery();
+					}
+					if (highDelivery < list.get(i).getNumberOfDelivery()) {
+						highDelivery = list.get(i).getNumberOfDelivery();
+					}
 				}
-                                System.out.println("Daily Number of Delivery Report");
-                                System.out.println("Average Delivery Made   : " + averageDelivery/list.size());
-                                System.out.println("Highest Delivery Made   : " + highDelivery);
-                                System.out.println("Lowest Delivery Made    : " + lowDelivery);
-                                System.out.println("\n\n\n");
+				System.out.println("Daily Number of Delivery Report");
+				System.out.println("Average Delivery Made   : " + averageDelivery / list.size());
+				System.out.println("Highest Delivery Made   : " + highDelivery);
+				System.out.println("Lowest Delivery Made    : " + lowDelivery);
 				System.out.print("Select Delivery Man Report: ");
 				System.out.println("Number of delivery made : " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
-                                
+
 			}
 			spacing();
 		} while (answer != 0);
@@ -184,5 +181,5 @@ public class AgileAssignmentY2S2 {
 	private static void spacing() {
 		System.out.println("\n\n\n\n\n");
 	}
-	
+
 }
