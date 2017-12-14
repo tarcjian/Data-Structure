@@ -19,6 +19,20 @@ public class DeliveryMan {
 	private String address;
 	private String phoneNumber;
 
+	public DeliveryMan() {
+		
+	}
+	
+	public DeliveryMan(String name, String status, int age, int numberOfDelivery, double salary, String phoneNumber, String address) {
+		this.name = name;
+		this.status = status;
+		this.age = age;
+		this.numberOfDelivery = numberOfDelivery;
+		this.salary = salary;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+	}
+	
 	public String getAddress() {
 		return address;
 	}

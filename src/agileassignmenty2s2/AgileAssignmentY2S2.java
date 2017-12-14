@@ -26,6 +26,8 @@ public class AgileAssignmentY2S2 {
 		int deliveryManUpdateNumber;
 		int moreUpdate;
 
+		initializeDeliverMan();
+		
 		do {
 			System.out.println("0. End");
 			System.out.println("1. Add Delivery Man");
@@ -56,8 +58,7 @@ public class AgileAssignmentY2S2 {
 					deliveryMan.setAddress(scanner.nextLine());
 					System.out.print("Enter phone number       : ");
 					deliveryMan.setPhoneNumber(scanner.nextLine());
-					System.out.print("Enter delivery Number    : ");
-					deliveryMan.setNumberOfDelivery(Integer.parseInt(scanner.nextLine()));
+					deliveryMan.setNumberOfDelivery(Integer.parseInt("0"));
 					list.add(deliveryMan);
 
 					System.out.print("Do you wish to continue to add staff member? (Y/N)");
@@ -178,6 +179,13 @@ public class AgileAssignmentY2S2 {
 		return deliveryList;
 	}
 
+	private static void initializeDeliverMan() {
+		list.add(new DeliveryMan("Quek Wei Jian", "Working", 20, 5, 3000.55, "012-3456789", "Quek Address"));
+		list.add(new DeliveryMan("Phuah Wai Yan", "Working", 18, 3, 4500.99, "012-9876543", "Phuah Address"));
+		list.add(new DeliveryMan("Ng Yih Sam", "Retire", 25, 15, 7600.30, "012-9786543", "Sam Address"));
+		list.add(new DeliveryMan("Seong Jian Sheng", "Working", 22, 7, 2000.55, "012-3456789", "Seong Address"));
+	}
+	
 	private static void spacing() {
 		System.out.println("\n\n\n\n\n");
 	}
