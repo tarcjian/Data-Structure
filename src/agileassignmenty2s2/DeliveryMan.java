@@ -19,6 +19,25 @@ public class DeliveryMan {
 	private String address;
 	private String phoneNumber;
 
+	private String taskStatus;
+	private int experience;
+
+	public String getTaskStatus() {
+		return taskStatus;
+	}
+
+	public void setTaskStatus(String taskStatus) {
+		this.taskStatus = taskStatus;
+	}
+
+	public int getExperience() {
+		return experience;
+	}
+
+	public void setExperience(int experience) {
+		this.experience = experience;
+	}
+	
 	public DeliveryMan() {
 		
 	}

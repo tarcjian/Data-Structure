@@ -5,8 +5,8 @@
  */
 package agileassignmenty2s2;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,8 +15,8 @@ import java.util.Scanner;
  */
 public class AgileAssignmentY2S2 {
 
-	private static List<DeliveryMan> list = new ArrayList<>();
-
+	private static ListInterface<DeliveryMan> list = new List<DeliveryMan>();
+	
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
@@ -171,8 +171,8 @@ public class AgileAssignmentY2S2 {
 
 	public String toString() {
 		String deliveryList = "";
+		System.out.println("The size is " + list.size());
 		for (int i = 0; i < list.size(); i++) {
-
 			deliveryList += list.get(i).toString();
 			deliveryList += "  \n";
 		}
