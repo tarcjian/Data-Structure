@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class AgileAssignmentY2S2 {
 
 	private static ListInterface<DeliveryMan> list = new List<DeliveryMan>();
-	
+
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
@@ -27,7 +27,7 @@ public class AgileAssignmentY2S2 {
 		int moreUpdate;
 
 		initializeDeliverMan();
-		
+
 		do {
 			System.out.println("0. End");
 			System.out.println("1. Add Delivery Man");
@@ -156,12 +156,20 @@ public class AgileAssignmentY2S2 {
 
 			} else if (answer == 4) {
 				spacing();
-				System.out.println("Delivery Man Report");
+				System.out.println("Delivery Man Report   Number of delivery made");
 				double averageDelivery = 0;
 				int highDelivery = list.get(0).getNumberOfDelivery();
 				int lowDelivery = list.get(0).getNumberOfDelivery();
+				int[][] desc = new int[list.size()][2];
+				int[] temp = new int[2];
+
 				for (int i = 0; i < list.size(); i++) {
-					System.out.println(i + 1 + ". " + list.get(i).getName());
+					desc[i][0] = list.get(i).getNumberOfDelivery();
+					desc[i][1] = i;
+				}
+
+				for (int i = 0; i < list.size(); i++) {
+					
 					averageDelivery += list.get(i).getNumberOfDelivery();
 					if (lowDelivery > list.get(i).getNumberOfDelivery()) {
 						lowDelivery = list.get(i).getNumberOfDelivery();
@@ -169,13 +177,28 @@ public class AgileAssignmentY2S2 {
 					if (highDelivery < list.get(i).getNumberOfDelivery()) {
 						highDelivery = list.get(i).getNumberOfDelivery();
 					}
+
+					for (int o = 0; o < list.size() - 1; o++) {
+						if (desc[o][0] < desc[o + 1][0]) {
+							temp[0] = desc[o][0];
+							temp[1] = desc[o][1];
+
+							desc[o][0] = desc[o + 1][0];
+							desc[o][1] = desc[o + 1][1];
+
+							desc[o + 1][0] = temp[0];
+							desc[o + 1][1] = temp[1];
+						}
+
+					}
+				}
+				for (int i = 0; i < list.size(); i++) {
+					System.out.println(i + 1 + ". " + list.get(desc[i][1]).getName() + "\t\t" + list.get(desc[i][1]).getNumberOfDelivery());
 				}
 				System.out.println("Daily Number of Delivery Report");
 				System.out.println("Average Delivery Made   : " + averageDelivery / list.size());
-				System.out.println("Highest Delivery Made   : " + highDelivery);
-				System.out.println("Lowest Delivery Made    : " + lowDelivery);
-				System.out.print("Select Delivery Man Report: ");
-				System.out.println("Number of delivery made : " + list.get(Integer.parseInt(scanner.nextLine()) - 1).getNumberOfDelivery());
+				System.out.println("Highest Delivery Made   : " + desc[0][0]);
+				System.out.println("Lowest Delivery Made    : " + desc[list.size()-1][0]);
 
 			}
 			spacing();
@@ -194,12 +217,12 @@ public class AgileAssignmentY2S2 {
 	}
 
 	private static void initializeDeliverMan() {
-		list.add(new DeliveryMan("Quek Wei Jian", "Working", 20, 5, 3000.55, "012-3456789", "Quek Address", "Clock Out", 1));
-		list.add(new DeliveryMan("Phuah Wai Yan", "Working", 18, 3, 4500.99, "012-9876543", "Phuah Address", "Clock In", 2));
-		list.add(new DeliveryMan("Ng Yih Sam", "Retire", 25, 15, 7600.30, "012-9786543", "Sam Address", "Clock Out", 3));
+		list.add(new DeliveryMan("Quek Wei Jian   ", "Working", 20, 5, 3000.55, "012-3456789", "Quek Address", "Clock Out", 1));
+		list.add(new DeliveryMan("Phuah Wai Yan   ", "Working", 18, 3, 4500.99, "012-9876543", "Phuah Address", "Clock In", 2));
+		list.add(new DeliveryMan("Ng Yih Sam      ", "Retire", 25, 15, 7600.30, "012-9786543", "Sam Address", "Clock Out", 3));
 		list.add(new DeliveryMan("Seong Jian Sheng", "Working", 22, 7, 2000.55, "012-3456789", "Seong Address", "Clock In", 4));
 	}
-	
+
 	private static void spacing() {
 		System.out.println("\n\n\n\n\n");
 	}
