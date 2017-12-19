@@ -58,7 +58,9 @@ public class AgileAssignmentY2S2 {
 					deliveryMan.setAddress(scanner.nextLine());
 					System.out.print("Enter phone number       : ");
 					deliveryMan.setPhoneNumber(scanner.nextLine());
-					deliveryMan.setNumberOfDelivery(Integer.parseInt("0"));
+					deliveryMan.setNumberOfDelivery(0);
+					deliveryMan.setTaskStatus("Clock Out");
+					deliveryMan.setExperience(0);
 					list.add(deliveryMan);
 
 					System.out.print("Do you wish to continue to add staff member? (Y/N)");
