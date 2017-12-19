@@ -21,6 +21,16 @@ public class DeliveryMan {
 
 	private String taskStatus;
 	private int experience;
+	
+	private double distanceTravel;
+
+	public double getDistanceTravel() {
+		return distanceTravel;
+	}
+
+	public void setDistanceTravel(double distanceTravel) {
+		this.distanceTravel = distanceTravel;
+	}
 
 	public String getTaskStatus() {
 		return taskStatus;
@@ -62,6 +72,19 @@ public class DeliveryMan {
 		this.address = address;
 		this.taskStatus = taskStatus;
 		this.experience = experience;
+	}
+	
+	public DeliveryMan(String name, String status, int age, int numberOfDelivery, double salary, String phoneNumber, String address, String taskStatus, int experience, double distanceTravel) {
+		this.name = name;
+		this.status = status;
+		this.age = age;
+		this.numberOfDelivery = numberOfDelivery;
+		this.salary = salary;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+		this.taskStatus = taskStatus;
+		this.experience = experience;
+		this.distanceTravel = distanceTravel;
 	}
 	
 	public String getAddress() {
@@ -129,6 +152,7 @@ public class DeliveryMan {
 				+ "Address         : " + address + "\n"
 				+ "Phone Number    : " + phoneNumber + "\n"
 				+ "Task Status     : " + taskStatus + "\n"
-				+ "Experience      : " + experience + "\n";
+				+ "Experience      : " + experience + "\n"
+				+ "Distance Travel : " + distanceTravel + "km \n";
 	}
 }
