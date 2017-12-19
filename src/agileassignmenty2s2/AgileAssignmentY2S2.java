@@ -89,13 +89,15 @@ public class AgileAssignmentY2S2 {
 				do {
 
 					spacing();
-					System.out.println("1. Name: " + deliveryMan.getName());
-					System.out.println("2. Status " + deliveryMan.getStatus());
-					System.out.println("3. Age " + deliveryMan.getAge());
-					System.out.println("4. Number of Delivery " + deliveryMan.getNumberOfDelivery());
-					System.out.println("5. Salary " + deliveryMan.getSalary());
-					System.out.println("6. Address " + deliveryMan.getAddress());
-					System.out.println("7. Phone Number " + deliveryMan.getPhoneNumber());
+					System.out.println("1. Name              : " + deliveryMan.getName());
+					System.out.println("2. Status            : " + deliveryMan.getStatus());
+					System.out.println("3. Age               : " + deliveryMan.getAge());
+					System.out.println("4. Number of Delivery: " + deliveryMan.getNumberOfDelivery());
+					System.out.println("5. Salary            : " + deliveryMan.getSalary());
+					System.out.println("6. Address           : " + deliveryMan.getAddress());
+					System.out.println("7. Phone Number      : " + deliveryMan.getPhoneNumber());
+					System.out.println("8. Task Status       : " + deliveryMan.getTaskStatus());
+					System.out.println("9. Experience        : " + deliveryMan.getExperience());
 					System.out.println("0. End");
 					System.out.print("Select detail wish to update: ");
 					moreUpdate = Integer.parseInt(scanner.nextLine());
@@ -134,6 +136,16 @@ public class AgileAssignmentY2S2 {
 							System.out.println("Current phone number is " + deliveryMan.getPhoneNumber());
 							System.out.print("New update phone number is ");
 							deliveryMan.setPhoneNumber(scanner.nextLine());
+							break;
+						case 8:
+							System.out.println("Current Task Status is " + deliveryMan.getTaskStatus());
+							System.out.print("New update task status is ");
+							deliveryMan.setTaskStatus(scanner.nextLine());
+							break;
+						case 9:
+							System.out.println("Current Experience is " + deliveryMan.getExperience());
+							System.out.print("New update experience is ");
+							deliveryMan.setExperience(Integer.parseInt(scanner.nextLine()));
 							break;
 					}
 				} while (moreUpdate != 0);
@@ -180,10 +192,10 @@ public class AgileAssignmentY2S2 {
 	}
 
 	private static void initializeDeliverMan() {
-		list.add(new DeliveryMan("Quek Wei Jian", "Working", 20, 5, 3000.55, "012-3456789", "Quek Address"));
-		list.add(new DeliveryMan("Phuah Wai Yan", "Working", 18, 3, 4500.99, "012-9876543", "Phuah Address"));
-		list.add(new DeliveryMan("Ng Yih Sam", "Retire", 25, 15, 7600.30, "012-9786543", "Sam Address"));
-		list.add(new DeliveryMan("Seong Jian Sheng", "Working", 22, 7, 2000.55, "012-3456789", "Seong Address"));
+		list.add(new DeliveryMan("Quek Wei Jian", "Working", 20, 5, 3000.55, "012-3456789", "Quek Address", "Clock Out", 1));
+		list.add(new DeliveryMan("Phuah Wai Yan", "Working", 18, 3, 4500.99, "012-9876543", "Phuah Address", "Clock In", 2));
+		list.add(new DeliveryMan("Ng Yih Sam", "Retire", 25, 15, 7600.30, "012-9786543", "Sam Address", "Clock Out", 3));
+		list.add(new DeliveryMan("Seong Jian Sheng", "Working", 22, 7, 2000.55, "012-3456789", "Seong Address", "Clock In", 4));
 	}
 	
 	private static void spacing() {

@@ -121,12 +121,14 @@ public class DeliveryMan {
 	}
 	
 	public String toString() {
-		return "Name : " + name + "\n" 
-				+ "Status : " + status + "\n" 
-				+ "Age : " + age + "\n" 
+		return    "Name            : " + name + "\n" 
+				+ "Status          : " + status + "\n" 
+				+ "Age             : " + age + "\n" 
 				+ "Delivery Number : " + numberOfDelivery + "\n" 
-				+ "Salary : " + salary + "\n"
-				+ "Address: " + address + "\n"
-				+ "Phone Number: " + phoneNumber + "\n";
+				+ "Salary          : " + salary + "\n"
+				+ "Address         : " + address + "\n"
+				+ "Phone Number    : " + phoneNumber + "\n"
+				+ "Task Status     : " + taskStatus + "\n"
+				+ "Experience      : " + experience + "\n";
 	}
 }
