@@ -23,7 +23,7 @@ public class DeliveryMan {
 	private int experience;
 	
 	private double distanceTravel;
-	private int id;
+	private String id;
 
 	public double getDistanceTravel() {
 		return distanceTravel;
@@ -52,7 +52,7 @@ public class DeliveryMan {
 	public DeliveryMan() {
 		
 	}
-	public DeliveryMan(int id,String name, String status, int age, int numberOfDelivery, double salary, String phoneNumber, String address, String taskStatus, int experience, double distanceTravel) {
+	public DeliveryMan(String id,String name, String status, int age, int numberOfDelivery, double salary, String phoneNumber, String address, String taskStatus, int experience, double distanceTravel) {
 		this.id = id;
 		this.name = name;
 		this.status = status;
@@ -66,11 +66,11 @@ public class DeliveryMan {
 		this.distanceTravel = distanceTravel;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
